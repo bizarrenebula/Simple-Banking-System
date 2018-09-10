@@ -1,23 +1,29 @@
-import random
+from random import randint
 
 
 class Client:
 
+    # {account_number: *****, name: "Anton", holdings: 500}
+    account = {}
+
     def __init__(self, name, deposit):
-        self.name = name
-        self.savings = deposit
-        self.acc_number = random.randint(10000, 99999)
+        self.account['account_number'] = randint(10000, 99999)
+        self.account['name'] = name
+        self.account['holdings'] = deposit
 
     def withdraw(self, amount):
-        if self.savings >= amount:
-            self.savings -= amount
+        if self.account['holdings'] >= amount:
+            self.account['holdings'] -= amount
             print("The sum of {} has been withdrawn from your account balance.".format(amount))
+            self.balance()
         else:
+            print()
             print("Not enough funds!")
 
     def deposit(self, amount):
-        self.savings += amount
+        self.account['holdings'] += amount
         print("The sum of {} has been added to your account balance.".format(amount))
 
     def balance(self):
-        print("Your current account balance is {}".format(self.savings))
+        print()
+        print("Your current account balance is {}".format(self.account['holdings']))

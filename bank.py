@@ -6,7 +6,9 @@ class Bank:
     def update_db(self, client):
         self.clients.append(client)
 
-    def verification(self, name, acc_num):
+    def authentication(self, name, account_number):
         for i in range(len(self.clients)):
-            if name == self.clients[i].name and acc_num == self.clients[i].acc_number:
+            if name in self.clients[i].account.values() and account_number in self.clients[i].account.values():
+                print()
+                print("Authentication completed!")
                 return self.clients[i]
