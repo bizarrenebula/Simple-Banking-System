@@ -10,5 +10,5 @@ class Bank:
         for i in range(len(self.clients)):
             if name in self.clients[i].account.values() and account_number in self.clients[i].account.values():
                 print()
-                print("Authentication completed!")
+                print("Authentication successful!")
                 return self.clients[i]

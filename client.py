@@ -3,7 +3,7 @@ from random import randint
 
 class Client:
 
-    # {account_number: *****, name: "Anton", holdings: 500}
+    # {account_number: xxxxx, name: "xxxxxx", holdings: xxxx}
     account = {}
 
     def __init__(self, name, deposit):
@@ -14,11 +14,13 @@ class Client:
     def withdraw(self, amount):
         if self.account['holdings'] >= amount:
             self.account['holdings'] -= amount
+            print()
             print("The sum of {} has been withdrawn from your account balance.".format(amount))
             self.balance()
         else:
             print()
             print("Not enough funds!")
+            self.balance()
 
     def deposit(self, amount):
         self.account['holdings'] += amount
@@ -26,4 +28,4 @@ class Client:
 
     def balance(self):
         print()
-        print("Your current account balance is {}".format(self.account['holdings']))
+        print("Your current account balance is: {} ".format(self.account['holdings']))

@@ -3,12 +3,14 @@ from bank import Bank
 
 
 bank = Bank()
+print()
 print("Welcome to {}!".format(bank.name))
 print()
 running = True
 while running:
     print()
     print("""Choose an option:
+    
     1. Open new bank account
     2. Open existing bank account
     3. Exit
@@ -38,10 +40,11 @@ while running:
             while acc_open:
                 print()
                 print("""Choose an option:
-                    1. Withdraw
-                    2. Deposit
-                    3. Balance
-                    4. Exit
+                
+    1. Withdraw
+    2. Deposit
+    3. Balance
+    4. Exit
                     """)
                 acc_choice = int(input("1, 2, 3 or 4: "))
                 if acc_choice == 1:
@@ -61,6 +64,7 @@ while running:
         else:
             print()
             print("Authentication failed!")
+            print("Reason: account not found.")
             continue
     elif choice == 3:
         print()
