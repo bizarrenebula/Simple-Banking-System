@@ -24,7 +24,9 @@ class Client:
 
     def deposit(self, amount):
         self.account['holdings'] += amount
+        print()
         print("The sum of {} has been added to your account balance.".format(amount))
+        self.balance()
 
     def balance(self):
         print()

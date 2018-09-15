@@ -14,7 +14,7 @@ while running:
     1. Open new bank account
     2. Open existing bank account
     3. Exit
-    """.format(bank.name))
+    """)
 
     choice = int(input("1, 2 or 3: "))
 
